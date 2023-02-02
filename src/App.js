@@ -4,8 +4,23 @@ import "./App.css";
 import Header from "./components/Header";
 import Navbar from "./components/navBar";
 import Search  from "./components/search";
-import { BrowserRouter, Route } from "react-router-dom";
+import styled from 'styled-components';
 
+const ScTitle = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: palevioletred;
+`;
+
+const ScParag=styled.p`
+font-family: 'Changa', sans-serif;
+font-size: 1em;
+text-align: justify;
+color: #364958;
+text-shadow: 1px 1px;
+margin:5%;
+
+`
 
 function App() {
   const [gorsel, setGorsel]= useState(null);
@@ -15,12 +30,11 @@ function App() {
     setDate(e);
   }
 
-  
 
   useEffect(()=> {
     const fetchGorsel=()=>{
     axios
-    .get('https://api.nasa.gov/planetary/apod?date='+date+'&api_key=DEMO_KEY')
+    .get('https://api.nasa.gov/planetary/apod?date='+date+'&api_key=yBBvSSxJ1KHa2ox6qvhQ9SlxhxOFXiNhUfKiSDeA')
     // Which we then set to state
     .then(res => {setGorsel(res.data)})
     
@@ -41,10 +55,10 @@ function App() {
       <Search changeHandler={changeHandler} date={date}/>
 
       <div className="App-alt">
-      <h1>{gorsel.title}</h1>
-      <p>{gorsel.date}</p>
-      <p>{gorsel.explanation}</p>
-		<p>Have Fun!<span role="img" aria-label='go!'>🚀</span>! </p>
+        <ScTitle>{gorsel.title}</ScTitle>
+        <p>{gorsel.date}</p>
+        <ScParag class="explanation-txt">{gorsel.explanation}</ScParag>
+		    <p>Have Fun!<span role="img" aria-label='go!'>🚀</span>! </p>
       </div>
     <div id="Ta">
       {gorsel.media_type==="image"? (
