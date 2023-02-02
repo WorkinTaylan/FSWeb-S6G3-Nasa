@@ -31,7 +31,7 @@ function App() {
     fetchGorsel();
   }, [date]);
 
-  if(!gorsel) return <h3>Yükleniyor...</h3>
+  if(!gorsel) return <h3>Get ready to be surprised!!</h3>
 
   return (
     <div className="App">
