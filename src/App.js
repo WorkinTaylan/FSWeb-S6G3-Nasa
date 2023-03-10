@@ -24,7 +24,7 @@ margin:5%;
 
 function App() {
   const [gorsel, setGorsel]= useState(null);
-  const [date , setDate]=useState("2023-02-02");
+  const [date , setDate]=useState("2023-03-10");
   
   const changeHandler=(e)=>{
     setDate(e);
@@ -34,7 +34,7 @@ function App() {
   useEffect(()=> {
     const fetchGorsel=()=>{
     axios
-    .get('https://api.nasa.gov/planetary/apod?date='+date+'&api_key=yBBvSSxJ1KHa2ox6qvhQ9SlxhxOFXiNhUfKiSDeA')
+    .get('https://api.nasa.gov/planetary/apod?date='+date+'&api_key=DEMO_KEY')
     // Which we then set to state
     .then(res => {setGorsel(res.data)})
     
@@ -56,7 +56,7 @@ function App() {
 
       <div className="App-alt">
         <ScTitle>{gorsel.title}</ScTitle>
-        <p>{gorsel.date}</p>
+        <p></p>
         <ScParag class="explanation-txt">{gorsel.explanation}</ScParag>
 		    <p>Have Fun!<span role="img" aria-label='go!'>🚀</span>! </p>
       </div>

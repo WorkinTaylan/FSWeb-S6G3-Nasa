@@ -6,13 +6,12 @@ const Search=(props)=>{
 
 const DateDiv=styled.input`
     background-color:black;
-    color:white;
-    font-family:Roboto-Mono;
+    
 `
 return(
-    <DateDiv>
+    <div>
         <input value={date} onChange={(event)=>changeHandler(event.target.value)} name="date" type="date" />
-    </DateDiv>
+    </div>
     )
 
 }

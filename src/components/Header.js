@@ -13,11 +13,16 @@ const ScHeader=styled.header`
 `
 
 const Title = styled.h1`
-  font-size: 1.5em;
-  text-align: center;
-  color: #F6F5F5;
-  margin:2%;
+font-size: 1em;
+text-align: center;
+color: #F6F5F5;
+margin:2%;
+text-decoration: none;
 `;
+
+const ScAnchor=styled.a`
+    text-decoration: none;
+`
 
 const ScImg=styled.img`
     margin-left:1%;
@@ -25,7 +30,9 @@ const ScImg=styled.img`
     return (
         <ScHeader>
             <ScImg src="https://www.nasa.gov/sites/all/themes/custom/nasatwo/images/nasa-logo.svg"/>
+            <a href="https://www.nasa.gov/">
             <Title>DAILY NASA </Title>
+            </a>
         </ScHeader>
         
     )
